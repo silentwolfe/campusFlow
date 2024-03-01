@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 *,
 *::after,
 *::before
@@ -9,6 +10,9 @@
 * {
     padding: 0;
     margin: 0;
+}
+html {
+    font-size: 80.5%;
 }
 body {
     background-color: rgb(240, 240, 240);
@@ -21,22 +25,19 @@ header
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     z-index: 100000;
     padding: 0 0 0 25px;
     background-color: #9C0C84;
-    width: 100vw;
+    width: 100%;
     height: 75px;
 }
 .mobile_nav_toggle {
     display: none;
 }
-
 .container {
-    border-top: 2px solid rgb(88, 88, 88);
+    margin: 0 10px;
 }
 #intro {
     font-family: "Ubuntu", sans-serif;
@@ -47,16 +48,34 @@ header
 h2, p, h4{
     margin: 5px;
 }
+h2 {
+    margin-top: 1em;
+}
+h4 {
+    margin-top: .5em;
+}
 p {
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
+    font-size: larger;
+    font-family: "Titillium Web", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
 }
 aside {
-    width: 30rem;
+    width: 80rem;
+    position: sticky;
+    height: 100dvh;
+    top: 0;
+    min-width: 250px;
+}
+
+.aside {
+    /* background-color: pink; */
+    margin: 6px;
+    padding: 6px;
+}
+.aside a {
+    color: black;
+    list-style-type: disc;
 }
 a {
     display: block;
@@ -76,17 +95,97 @@ a {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
-@media (max-width: 45em){
+.uniimg {
+    width: 100%;
+}
+.not-available h1 {
+    display: none;
+}
+footer {
+    display: none;
+    text-align: center;
+    padding: 23px;
+    color: white;
+    background-color: #273136;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.shadow {
+    padding: .5rem .5rem 0 .5rem;
+    box-shadow: 5px 5px 5px 5px black;
+}
+#footerid {
+    margin: 0;
+}
+.footerwave {
+    display: none;
+    position: relative;
+    top: 4px;
+}
+footer form {
+    display: block;
+    margin: auto;
+    /* background-color: mediumvioletred; */
+    width: 80%;
+    height: 150px;
+}
+form label {
+    display: block;
+    
+    margin: 0.5rem;
+}
+footer form input[type="email"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgb(9, 188, 248);
+    border-radius: 4px;
+    margin-top: .5rem;
+    font-size: 1rem;
+}
+footer form input[type="email"]:focus {
+    outline: 1px solid blue;
+}
+footer button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.contact_section {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+.icons {
+    display: flex;
+    justify-content: center;
+}
+.icons img{
+    width: 40px;
+}
+.iconsgap {
+    margin: 0 4em;
+}
+
+@media (max-width: 47em){
+    header {
+        position: sticky;
+        top: 0;
+    }
     aside {
         position: fixed;
         z-index: 100;
-        inset: 0 0 0 32.5%;
+        inset: 0 0 0 26%;
         background: hsl(310 86% 33% / 0.6);
         backdrop-filter: blur(1rem);
 
         padding: min(20vh, 5rem) .8em;
         transform: translatex(100%);
-        transition: transform 350ms ease-in;
+        transition: 1s;
     }
     aside[data-visible=true] {
         transform: translatex(0%);
@@ -102,12 +201,41 @@ a {
         border-radius: 5px;
         z-index: 9999;
         aspect-ratio: 1;
-        top: 1.42rem;
+        top: 2rem;
         right: 2rem;
+    }
+    .aside a {
+        color: white;
     }
     .mobile_nav_toggle[aria-expanded="true"]{
         background-image: url(image/hamburger-cancel.svg);
         background-size: cover;
         background-color: transparent;
+    }
+    footer {
+        display: block;
+    }
+    .footerwave {
+        display: block;
+    }
+}
+@media screen and (min-width: 800px) {
+    main {
+        display: none;
+    }
+    header {
+        display: none;
+    }
+    .not-available h1{
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 24px;
+    }
+}
+@media (min-width: 753px) and (max-width: 800px) {
+    .footerwave {
+        position: relative;
+        top: 5px;
     }
 }

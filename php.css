@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    /* height: 100vh; */
+    background-color: aqua;
+}
+section {
+    text-align: center;
+}
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    top: 250px;
+}
