@@ -1,1 +1,1 @@
-UNIBEN WebApp
+The website provides all the information needed to know about the UNIBEN WebApp
